@@ -1,71 +1,65 @@
+import jsdom from 'jsdom'
+import fetch from 'node-fetch'
 import merge from 'lodash.merge'
-import puppeteer from 'puppeteer'
-import { pipe } from '../utils.js'
 import cliProgress from 'cli-progress'
 import { writeToFile } from '../writeToFile.js'
 import { generateMidSmallCap } from './msc/index.js'
 
+const { JSDOM } = jsdom
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'contents/MYX.txt'
 
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
+const scrapUrl = ({ per_page, page }) =>
+  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
+
+const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
+const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
+const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
+
 async function scrapBursaMalaysia() {
-  const scrapUrl = ({ per_page, page }) =>
-    `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
-
   try {
-    const browser = await puppeteer.launch()
-    const page = await browser.newPage()
-
-    await page.goto(scrapUrl({ page: 1, per_page: 50 }))
+    const page = await fetch(scrapUrl({ page: 1, per_page: 50 }))
+    const dom = await page.text()
+    const { document } = new JSDOM(dom).window
 
     // getting max size of syariah list by grabbing the value in pagination btn
-    const maxPageNumbers = await page.evaluate(() => {
-      const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
-        .map(i => i.textContent)
-        .filter(Boolean)
-        .map(parseFloat)
+    const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
+      .map(i => i.textContent)
+      .filter(Boolean)
+      .map(parseFloat)
 
-      return Math.max(...paginationBtn)
-    })
+    const maxPageNumbers = Math.max(...paginationBtn)
 
     let syariahList = {}
     progressBar.start(maxPageNumbers, 0)
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
-      await page.goto(scrapUrl({ page: i, per_page: 50 }), {
-        waitUntil: 'networkidle2',
-      })
+      const stockPage = await fetch(scrapUrl({ page: i, per_page: 50 }))
+      const dom_page = await stockPage.text()
+      const { document } = new JSDOM(dom_page).window
 
-      const temp = await page.evaluate(() => {
-        const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
-        const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
-        const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
+      const temp = Array.from(document.querySelectorAll('table.equity_prices_table tbody tr')).reduce((acc, tr) => {
+        const s = tr.querySelector(':nth-child(2)').textContent
+        const stockCode = tr.querySelector(':nth-child(3)').textContent
 
-        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
-          const s = tr.querySelector(':nth-child(2)').textContent
-          const stockCode = tr.querySelector(':nth-child(3)').textContent
-
-          const code = removeSpaces(stockCode)
-          const stockName = removeSpacesAndShariah(s)
-          return {
-            ...acc,
-            [code]: {
-              s: 1,
-              code,
-              stockName,
-            },
-          }
-        }, {})
-      })
+        const code = removeSpaces(stockCode)
+        const stockName = removeSpacesAndShariah(s)
+        return {
+          ...acc,
+          [code]: {
+            s: 1,
+            code,
+            stockName,
+          },
+        }
+      }, {})
 
       syariahList = { ...syariahList, ...temp }
       progressBar.increment()
     }
-
-    await browser.close()
 
     console.log('\n\nFound: ', Object.keys(syariahList).length)
 

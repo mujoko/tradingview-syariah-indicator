@@ -37,6 +37,8 @@
     "simple-git": "^1.132.0",
     "terser": "^5.5.1",
     "web-ext": "^5.4.1",
-    "webextension-polyfill": "^0.7.0"
+    "webextension-polyfill": "^0.7.0",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1"
   }
 }
