@@ -1,6 +1,7 @@
 name: Automate STOCK_LIST gh_bot
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     # Asia/Kuala_Lumpur around 6pm, weekdays only
@@ -8,7 +9,7 @@ on:
 
 jobs:
   automation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     strategy:
       matrix:
