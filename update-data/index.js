@@ -1,4 +1,4 @@
-import git from 'simple-git'
+// import git from 'simple-git'
 import merge from 'lodash.merge'
 import { writeToFile } from './writeToFile.js'
 import { MYX, MYX_FILENAME } from './MYX/index.js'
@@ -26,7 +26,7 @@ async function commitChangesIfAny() {
     )
 
     if (!isCommitSKip) {
-      await commitChangesIfAny()
+      // await commitChangesIfAny()
     }
 
     process.exit()

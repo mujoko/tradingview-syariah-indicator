@@ -1,0 +1,16 @@
+.github
+_locales
+assets
+config
+docs
+node_modules
+script
+src
+webextartifacts
+.*
+manifest.json
+README.md
+
+# These file is required for automation
+# contents
+# updatedata
