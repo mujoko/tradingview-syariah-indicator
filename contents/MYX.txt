@@ -1,7 +1,7 @@
 MYX
 mscAt     : Thu Dec 31 2020 00:00:00 GMT+0800 (Malaysia Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5ff4163739fba21c7e048fbf/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2020.pdf
-updatedAt : Fri Feb 19 2021 22:08:01 GMT+0800 (Malaysia Time)
+updatedAt : Sun Mar 28 2021 21:06:55 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s, msc
@@ -23,6 +23,7 @@ AFUJIYA      : s
 AGES         : s
 AHB          : s
 AHEALTH      : s, msc
+AIMFLEX      : s, msc
 AIRASIA      : s
 AJI          : s, msc
 AJIYA        : s
@@ -282,7 +283,6 @@ G3-WA        : s
 GADANG       : s, msc
 GADANG-WB    : s
 GAMUDA       : s
-GAMUDA-WE    : s
 GASMSIA      : s
 GBGAQRS      : s, msc
 GBGAQRS-WB   : s
@@ -332,6 +332,8 @@ HCK          : s, msc
 HCK-WA       : s
 HENGYUAN     : s, msc
 HEVEA        : s, msc
+HEXIND       : s
+HEXIND-WA    : s
 HEXTAR       : s, msc
 HEXZA        : msc
 HHGROUP      : s
@@ -341,7 +343,6 @@ HIAPTEK-LA   : s
 HIAPTEK-WB   : s
 HIBISCS      : s, msc
 HIBISCS-PA   : s
-HIBISCS-WC   : s
 HIGHTEC      : s
 HIL          : s, msc
 HIL-WB       : s
@@ -369,7 +370,6 @@ HUMEIND      : msc
 HUPSENG      : s, msc
 HWATAI       : s
 HWGB         : s, msc
-HWGB-WD      : s
 IBHD         : s, msc
 IBRACO       : s, msc
 ICAP         : msc
@@ -401,7 +401,6 @@ IQGROUP      : s
 IQZAN        : s
 IREKA        : s
 IRIS         : s, msc
-ISTONE       : s, msc
 ITRONIC      : s
 IVORY        : s
 IWCITY       : s, msc
@@ -494,6 +493,7 @@ LCTITAN      : s
 LEBTECH      : s
 LEESK        : s
 LFECORP      : s
+LFECORP-OR   : s
 LIIHEN       : s, msc
 LIONIND      : s, msc
 LIONPSIM     : s
@@ -511,6 +511,7 @@ LYC          : s
 M3TECH       : s
 MAA          : msc
 MACPIE       : s
+MACPIE-WB    : s
 MAG          : s
 MAG-WB       : s
 MAGNA        : s, msc
@@ -797,8 +798,6 @@ SCABLE       : s
 SCBUILD      : s
 SCGBHD       : msc
 SCGM         : s, msc
-SCH          : s
-SCH-WA       : s
 SCIB         : s, msc
 SCIB-WB      : s
 SCICOM       : msc
@@ -845,6 +844,7 @@ SKPRES       : s
 SLIC         : s
 SLP          : s, msc
 SLVEST       : s, msc
+SLVEST-WA    : s
 SMCAP        : s
 SMCAP-WC     : s
 SMETRIC      : s
@@ -860,6 +860,7 @@ SOLUTN       : s, msc
 SOLUTN-WA    : s
 SOP          : s
 SPRING       : s
+SPRING-WA    : s
 SPRITZER     : s, msc
 SPSETIA      : s
 SPSETIA-PA   : s
@@ -873,14 +874,12 @@ STRAITS      : s
 STRAITS-WA   : s
 SUCCESS      : s
 SUMATEC      : s
-SUMATEC-WA   : s
 SUNCON       : s
 SUNSURIA     : s, msc
 SUNWAY       : s
 SUNWAY-PA    : s
 SUNWAY-WB    : s
 SUNZEN       : s
-SUNZEN-WB    : s
 SUPERLN      : s
 SUPERMX      : s
 SUPREME      : s
@@ -905,12 +904,14 @@ TASCO        : msc
 TASHIN       : s
 TCHONG       : msc
 TCS          : s
+TCS-WA       : s
 TDEX         : s, msc
 TDM          : s, msc
 TECFAST      : s
 TECHBND      : msc
 TECHNAX      : s, msc
 TEKSENG      : s, msc
+TELADAN      : s
 TENAGA       : s
 TEOSENG      : s, msc
 TEXCYCL      : s
@@ -943,6 +944,7 @@ TPC          : s
 TRC          : s
 TRIMODE      : s
 TRIVE        : s
+TRIVE-WC     : s
 TROP         : s, msc
 TSH          : s, msc
 TSRCAP       : s
@@ -995,7 +997,6 @@ WELLCAL      : s, msc
 WIDAD        : s, msc
 WIDAD-WA     : s
 WILLOW       : msc
-WINTONI      : s
 WONG         : s
 WOODLAN      : s
 WPRTS        : s
