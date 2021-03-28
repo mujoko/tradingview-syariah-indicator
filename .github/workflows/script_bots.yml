@@ -9,7 +9,7 @@ on:
 
 jobs:
   automation:
-    runs-on: ubuntu-18.04
+    runs-on: self-hosted
 
     strategy:
       matrix:
