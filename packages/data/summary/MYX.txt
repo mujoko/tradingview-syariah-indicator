@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sun Aug 15 2021 08:50:16 GMT+0800 (Malaysia Time)
+updatedAt : Wed Aug 18 2021 17:25:18 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -218,7 +218,6 @@ ECOWLD       : s
 ECOWLD-WA    : s
 EDARAN       : s
 EDEN         : s
-EDEN-WB      : s
 EDGENTA      : s
 EDUSPEC      : s
 EDUSPEC-WB   : s
@@ -295,7 +294,6 @@ GFM          : s
 GFM-WC       : s
 GHLSYS       : s
 GIIB         : s
-GIIB-OR      : s
 GKENT        : s
 GLBHD        : s
 GLOMAC       : s
@@ -346,7 +344,6 @@ HOMERIZ-WC   : s
 HONGSENG     : s
 HONGSENG-WA  : s
 HOOVER       : s
-HOOVER-OR    : s
 HPMT         : s
 HPPHB        : s
 HSL          : s
@@ -517,7 +514,6 @@ MENANG       : s
 MENTIGA      : s
 MERCURY      : s
 MERIDIAN     : s
-MERIDIAN-WA  : s
 MERIDIAN-WB  : s
 MERIDIAN-WC  : s
 MESB         : s
