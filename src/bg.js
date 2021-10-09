@@ -2,7 +2,7 @@
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
 const fetchData = async (shouldRefreshData = false) => {
-  let jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+  let jsonUrl = 'https://raw.githubusercontent.com/mujoko/tradingview-syariah-indicator/master/stock-list.json'
 
   if (shouldRefreshData) {
     jsonUrl += `?r=${Math.random()}`
@@ -10,7 +10,9 @@ const fetchData = async (shouldRefreshData = false) => {
 
   try {
     const res = await fetch(jsonUrl)
-    return await res.json()
+	  console.info('testing')
+	  console.info(res)
+	  return await res.json()
   } catch (e) {
     console.error('Github json when wrong', e)
   }
