@@ -6,7 +6,7 @@ browser.runtime.sendMessage({
   payload: getCurrentPathname(),
 })
 
-const ONLY_VALID_COUNTRIES = ['my']
+const ONLY_VALID_COUNTRIES = ['id']
 
 const css = {
   main: {

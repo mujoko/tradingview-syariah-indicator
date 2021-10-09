@@ -7,7 +7,7 @@ const tsi = (function () {
   const GA = 'UA-183073441-1'
   let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
-  const TRADING_VIEW_MYR = 'MYX'
+  const TRADING_VIEW_MYR = 'IDX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
 
