@@ -65,8 +65,8 @@ updateShariahDate()
 async function updateShariahDate() {
   // from storage write to dom
   const {
-    MYX: { updatedAt },
-  } = await browser.storage.local.get('MYX')
+    IDX: { updatedAt },
+  } = await browser.storage.local.get('IDX')
 
   document.querySelector('[data-tsi=my_updated_at]').textContent = tsi.isValidDate(updatedAt)
     ? new Date(updatedAt).toLocaleDateString()
