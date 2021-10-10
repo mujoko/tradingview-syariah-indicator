@@ -45,8 +45,8 @@ async function listener(id, { status }, { url }) {
       console.log('>>> Cache')
     } else {
       console.log('>>> API')
-      const { MYX } = await fetchData()
-      await setIDXStorages(MYX)
+      const { IDX } = await fetchData()
+      await setIDXStorages(IDX)
 
       await browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() })
     }
@@ -58,13 +58,13 @@ async function listener(id, { status }, { url }) {
 async function setIDXStorages({ list, updatedAt }) {
   try {
     await browser.storage.local.set({
-      MYX: {
+      IDX: {
         list, // must save in list key
         updatedAt,
       },
     })
   } catch (e) {
-    console.error('Error set MYX storage', e)
+    console.error('Error set IDX storage', e)
   }
 }
 
@@ -104,7 +104,7 @@ browser.runtime.onMessage.addListener(request => {
       .set({ LAST_FETCH_AT: null })
       .then(() => console.log('>>> INVALIDATE CACHE'))
       .then(() => fetchData(true))
-      .then(({ MYX }) => setIDXStorages(MYX))
+      .then(({ IDX }) => setIDXStorages(IDX))
       .then(() => browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() }))
   }
 })
