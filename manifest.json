@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "version": "1.0.0",
   "default_locale": "en",
-  "author": "Azriz Haziq Jasni",
+  "author": "Azriz Haziq Jasni and Mujoko",
   "name": "__MSG_ext_extension_name__",
   "description": "__MSG_ext_extension_description__",
   "homepage_url": "https://github.com/mujoko/tradingview-syariah-indicator",
