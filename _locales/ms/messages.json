@@ -1,6 +1,6 @@
 {
   "ext_extension_name": { "message": "Petunjuk Shariah Tradingview" },
-  "ext_extension_description": { "message": "Paparkan penunjuk syariah kecil ke senarai saham dalam Tradingview(MY)" },
+  "ext_extension_description": { "message": "Paparkan penunjuk syariah kecil ke senarai saham dalam Tradingview(IDX)" },
   "js_screener_filter_btn_shariah_on": { "message": "Shariah: AKTIF" },
   "js_screener_filter_btn_shariah_off": { "message": "Shariah: NYAHAKTIF" },
   "js_popup_version": { "message": "Versi terkini" },

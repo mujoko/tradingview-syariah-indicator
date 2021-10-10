@@ -60,12 +60,12 @@ tsi.addStyle(`
   .${css.main.body} .${css.main.row} {
      display: table-row;
   }
-  
+
   // SHARIAH ON
   .${css.main.body}.${css.shariah.body} .${css.shariah.row} {
      display: table-row;
   }
-  
+
   .${css.main.body}.${css.shariah.body} .${css.main.row}:not(.${css.shariah.row}) {
      display: none;
   }

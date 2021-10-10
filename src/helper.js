@@ -7,7 +7,7 @@ const tsi = (function () {
   const GA = 'UA-183073441-1'
   let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
-  const TRADING_VIEW_MYR = 'IDX'
+  const TRADING_VIEW_IDX = 'IDX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
 
@@ -16,10 +16,10 @@ const tsi = (function () {
 
     try {
       let {
-        MYX: { list: MYX_LIST },
+        MYX: { list: TRADING_VIEW_IDX },
       } = await browser.storage.local.get('MYX')
 
-      MYX = MYX_LIST
+      MYX = TRADING_VIEW_IDX
     } catch (e) {
       console.warn('Tradingview Shariah Indicator: Please refresh the browser')
     }
@@ -28,7 +28,7 @@ const tsi = (function () {
       return Object.entries(list).map(([key, value]) => [`${exchange}:${key}`, value])
     }
 
-    SHARIAH_LIST = new Map([...prefixStocksWithExchange(MYX, TRADING_VIEW_MYR)])
+    SHARIAH_LIST = new Map([...prefixStocksWithExchange(MYX, TRADING_VIEW_IDX)])
     return SHARIAH_LIST
   }
 
@@ -197,7 +197,7 @@ const tsi = (function () {
     getStockStat,
     setStockListInMap,
 
-    TRADING_VIEW_MYR,
+    TRADING_VIEW_IDX,
     attributeName,
     extensionName,
   }
