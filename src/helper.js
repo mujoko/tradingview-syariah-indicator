@@ -12,14 +12,14 @@ const tsi = (function () {
   const extensionName = 'tradingview-syariah-indicator'
 
   async function setStockListInMap() {
-    let MYX = {}
+    let IDX = {}
 
     try {
       let {
-        MYX: { list: TRADING_VIEW_IDX },
-      } = await browser.storage.local.get('MYX')
+        IDX: { list: TRADING_VIEW_IDX },
+      } = await browser.storage.local.get('IDX')
 
-      MYX = TRADING_VIEW_IDX
+      IDX = TRADING_VIEW_IDX
     } catch (e) {
       console.warn('Tradingview Shariah Indicator: Please refresh the browser')
     }
@@ -28,7 +28,7 @@ const tsi = (function () {
       return Object.entries(list).map(([key, value]) => [`${exchange}:${key}`, value])
     }
 
-    SHARIAH_LIST = new Map([...prefixStocksWithExchange(MYX, TRADING_VIEW_IDX)])
+    SHARIAH_LIST = new Map([...prefixStocksWithExchange(IDX, TRADING_VIEW_IDX)])
     return SHARIAH_LIST
   }
 
