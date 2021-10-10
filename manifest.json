@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "default_locale": "en",
   "author": "Azriz Haziq Jasni and Mujoko",
   "name": "__MSG_ext_extension_name__",
